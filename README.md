@@ -1,4 +1,4 @@
-⚠️ **Doctrine Status: FROZEN (v1.0)** 
+⚠️ **Doctrine Status: FROZEN (v1.0) - canonical tag: doctrine-v1.0-frozen
  
  TruValue Doctrine v1.0 is formally frozen and published. 
  No semantic changes, interpretations, analytics, workflow logic, or convenience features 
