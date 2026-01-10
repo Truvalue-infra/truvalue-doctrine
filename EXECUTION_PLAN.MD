@@ -69,6 +69,63 @@ Execution MAY enforce doctrine by constraints only:
 
 Execution MUST NOT enforce doctrine by interpretation, scoring, or judgment.
 
+## 3. Execution Artifacts (Non-Doctrine)
+
+Execution produces *artifacts* that help implement, operate, and audit the system **without adding semantics** and **without changing doctrine**.
+
+All artifacts MUST:
+- Be traceable to a doctrine clause or invariant
+- Be implementation-facing (engineering / operations / legal posture)
+- Never redefine meaning (no “interpretation layer”)
+- Prefer checklists, constraints, refusal scripts, and evidence formats
+- Be safe to delete without invalidating the frozen doctrine tag
+
+### 3.1 Artifact Registry (Canonical)
+
+All execution artifacts live under `/execution/` and are numbered.
+Each artifact MUST include:
+- Status (Draft / Active / Deprecated)
+- Purpose (what it enables)
+- Non-claims (what it explicitly does NOT do)
+- Links to doctrine clauses / invariants it depends on
+
+### 3.2 Required Artifacts (v1)
+
+The following artifacts are REQUIRED for post-freeze execution:
+
+1) `/execution/002-record-scope-cards/`
+   - Record Scope Card templates (what a record is / isn’t)
+   - Declaration Card templates
+   - Export format examples (human-readable + machine)
+
+2) `/execution/003-hostile-review-checklist/`
+   - Hostile Review Checklist (merge-gating)
+   - “Doctrine breach” triggers & examples
+   - Refusal scripts for product/integrator pressure
+
+3) `/execution/004-integration-guardrails/`
+   - Integration invariants translated into “must/never” checks
+   - Minimal required fields for declarations (record sufficiency)
+   - UX non-coercion rules (no implied correctness)
+
+4) `/execution/005-security-posture/`
+   - Key custody model notes (externalized custody)
+   - Export-first custody requirements
+   - Subpoena/discovery posture constraints (non-custodial framing)
+
+5) `/execution/006-release-and-versioning/`
+   - Doctrine version bump rules (when v2 is allowed)
+   - Tag naming rules (doctrine-vX.Y-frozen)
+   - “No stealth changes” operational checklist
+
+### 3.3 Governance of Artifacts
+
+- Artifacts MAY evolve in the execution branch.
+- Artifacts MUST NOT be merged into `main` if they change doctrine or add semantics.
+- Artifacts can be promoted to main only if they are:
+  (a) purely operational constraints, or
+  (b) templates/checklists that do not redefine meaning.
+
 
 
 
