@@ -8,6 +8,7 @@
 
 #TruValue Doctrine (Frozen)
 
+<........freeze test>
 
 
 
